@@ -93,5 +93,4 @@ from sklearn.svm import SVC
 # plt.show()
 datas = se.get_dataset_names()
 data = se.load_dataset(datas[3])
-print(data)
-
+print(data.shape)

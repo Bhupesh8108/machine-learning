@@ -103,4 +103,10 @@ model = KMeans(n_clusters=3)
 model.fit(xd)
 xd['label'] = model.labels_
 se.scatterplot(x = 'ins_premium', y = 'ins_losses', data = xd ,hue= 'label')
+plt.tight_layout()
+plt.grid()
 plt.show()
+
+
+
+

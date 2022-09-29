@@ -1,5 +1,6 @@
 import random
 
+import matplotlib.pyplot as plt
 import seaborn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LinearRegression,LogisticRegression
@@ -92,5 +93,14 @@ from sklearn.svm import SVC
 # plt.style.use('ggplot')
 # plt.show()
 datas = se.get_dataset_names()
-data = se.load_dataset(datas[3])
-print(data.shape)
+data = se.load_dataset(datas[4])
+xd = data.drop(['abbrev'],axis=1)
+y=data['ins_premium']
+print(y)
+from sklearn.cluster import KMeans
+print(xd.columns)
+model = KMeans(n_clusters=3)
+model.fit(xd)
+xd['label'] = model.labels_
+se.scatterplot(x = 'ins_premium', y = 'ins_losses', data = xd ,hue= 'label')
+plt.show()

@@ -5,4 +5,4 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.svm import SVC
 def accuracy(x,y):
-
+    pass

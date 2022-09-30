@@ -29,12 +29,15 @@ pred = model.predict(data[['total']])
 # print(new_data)
 
 from sklearn.svm import SVC
-# color = pd.get_dummies(data['color'],drop_first=True)
-# # print(color)
-# x = (data[['passengers','distance','total']])
-# x['colors'] = color
-# y = data['payment'].fillna('credit card')
-# x,xt,y, yt = train_test_split(x,y)
+color = pd.get_dummies(data['color'],drop_first=True)
+# print(color)
+x = (data[['passengers','distance','total']])
+x['colors'] = color
+y = data['payment'].fillna('credit card')
+y = pd.get_dummies(y,drop_first=True)
+x,xt,y, yt = train_test_split(x,y)
+from acc_check import accuracy
+accuracy(x,xt,y, yt)
 # model = SVC()
 # model.fit(x,y)
 # pre = model.predict(xt)
@@ -93,20 +96,22 @@ from sklearn.svm import SVC
 # se.scatterplot(data['distance'],data['total'],hue=new_data['label'],s=15)
 # plt.style.use('ggplot')
 # plt.show()
-datas = se.get_dataset_names()
-data = se.load_dataset(datas[4])
-xd = data.drop(['abbrev'],axis=1)
-y=data['ins_premium']
-print(y)
-from sklearn.cluster import KMeans
-print(xd.columns)
-model = KMeans(n_clusters=3)
-model.fit(xd)
-xd['label'] = model.labels_
-se.scatterplot(x = 'ins_premium', y = 'ins_losses', data = xd ,hue= 'label')
-plt.tight_layout()
-plt.grid()
-plt.show()
+
+
+# datas = se.get_dataset_names()
+# data = se.load_dataset(datas[4])
+# xd = data.drop(['abbrev'],axis=1)
+# y=data['ins_premium']
+# print(y)
+# from sklearn.cluster import KMeans
+# print(xd.columns)
+# model = KMeans(n_clusters=3)
+# model.fit(xd)
+# xd['label'] = model.labels_
+# se.scatterplot(x = 'ins_premium', y = 'ins_losses', data = xd ,hue= 'label')
+# plt.tight_layout()
+# plt.grid()
+# plt.show()
 
 
 

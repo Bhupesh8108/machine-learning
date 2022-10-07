@@ -67,16 +67,16 @@ from acc_check import accuracy
 # pre = model.predict(xt)
 # print(accuracy_score(pre,yt))
 
-fig, axs = plt.subplots(ncols=2, nrows=2)
+# fig, axs = plt.subplots(ncols=2, nrows=2)
 from sklearn.cluster import KMeans
 # import seaborn as se
 # import matplotlib.pyplot as plt
-new_data = data[['total','distance','passengers']]
-cluster = KMeans(n_clusters=10)
+# new_data = data[['total','distance','passengers']]
+# cluster = KMeans(n_clusters=10)
 # given = [0, 1, 2]
 # desired = ['low','medium','high']
-cluster.fit(new_data)
-new_data['label'] =(cluster.labels_)
+# cluster.fit(new_data)
+# new_data['label'] =(cluster.labels_)
 # low, high, med = new_data.groupby(by='label')
 # print(low)
 # print(med)
@@ -91,7 +91,7 @@ new_data['label'] =(cluster.labels_)
 # # print(pd.DataFrame(high[1]).describe().mean().total)
 # # print(pd.DataFrame(med[1]).describe().mean().total)
 # # print(low[1].describe().mean().total)
-se.scatterplot(data['distance'],data['total'],hue=new_data['label'],s=5,ax=axs[(0,1)])
+# se.scatterplot(data['distance'],data['total'],hue=new_data['label'],s=5,ax=axs[(0,1)])
 
 
 
@@ -117,19 +117,8 @@ se.scatterplot(data['distance'],data['total'],hue=new_data['label'],s=5,ax=axs[(
 # se.scatterplot(data['distance'],data['total'],hue=agg,s=5,ax=axs[(1,0)])
 # plt.style.use('ggplot')
 # plt.show()
-# from sklearn.cluster import  Birch
-# agg = Birch(threshold=1.7, n_clusters=10).fit(x).labels_
-# se.scatterplot(data['distance'],data['total'],hue=agg,s=5,ax=axs[(1,1)])
-# print('sucess')
 # # plt.style.use('ggplot')
 # plt.show()
-
-import  numpy as np
-data = np.array([1,2,3])
-print(data.ndim)
-print(data.reshape(3,1))
-print(np)
-
 
 
 

@@ -110,19 +110,24 @@ se.scatterplot(data['distance'],data['total'],hue=new_data['label'],s=5,ax=axs[(
 # plt.grid()
 # plt.show()
 
-
-from sklearn.cluster import  AgglomerativeClustering
-agg = AgglomerativeClustering(n_clusters=10).fit(x).labels_
-print(len(agg))
-se.scatterplot(data['distance'],data['total'],hue=agg,s=5,ax=axs[(1,0)])
-plt.style.use('ggplot')
-plt.show()
-from sklearn.cluster import  Birch
-agg = Birch(threshold=1.7, n_clusters=10).fit(x).labels_
-se.scatterplot(data['distance'],data['total'],hue=agg,s=5,ax=axs[(1,1)])
-print('sucess')
+#
+# from sklearn.cluster import  AgglomerativeClustering
+# agg = AgglomerativeClustering(n_clusters=10).fit(x).labels_
+# print(len(agg))
+# se.scatterplot(data['distance'],data['total'],hue=agg,s=5,ax=axs[(1,0)])
 # plt.style.use('ggplot')
-plt.show()
+# plt.show()
+# from sklearn.cluster import  Birch
+# agg = Birch(threshold=1.7, n_clusters=10).fit(x).labels_
+# se.scatterplot(data['distance'],data['total'],hue=agg,s=5,ax=axs[(1,1)])
+# print('sucess')
+# # plt.style.use('ggplot')
+# plt.show()
+
+import  numpy as np
+data = np.array([1,2,3])
+print(data.ndim)
+print(data.reshape(3,1))
 
 
 

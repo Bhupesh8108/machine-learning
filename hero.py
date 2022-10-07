@@ -128,6 +128,7 @@ import  numpy as np
 data = np.array([1,2,3])
 print(data.ndim)
 print(data.reshape(3,1))
+print(np)
 
 
 

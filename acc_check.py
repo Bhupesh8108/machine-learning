@@ -4,8 +4,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB, BernoulliNB ,MultinomialNB
+from sklearn.neighbors import KNeighborsClassifier
 
-met = [DecisionTreeClassifier(),RandomForestClassifier(),LogisticRegression(),LinearRegression(),SVC(), GaussianNB(), BernoulliNB() ,MultinomialNB()]
+met = [DecisionTreeClassifier(),RandomForestClassifier(),LogisticRegression(),LinearRegression(),SVC(), GaussianNB(), BernoulliNB() ,MultinomialNB(), KNeighborsClassifier()]
 accu = []
 def accuracy(x,xt,y,yt):
     for i in met:
